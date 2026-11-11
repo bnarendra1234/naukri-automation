@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Naukri Automation Bot — Technical Documentation</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm 20mm 15mm;
+            @bottom-right {
+                content: counter(page);
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2937;
+            line-height: 1.6;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .header-cover {
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+        h1 {
+            color: #1e3a8a;
+            font-size: 26px;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+        .subtitle {
+            color: #4b5563;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .badges {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .badge {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        h2 {
+            color: #1e40af;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-bottom: 1.5px solid #e5e7eb;
+            padding-bottom: 6px;
+            page-break-after: avoid;
+        }
+        h3 {
+            color: #1f2937;
+            font-size: 14px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            page-break-after: avoid;
+        }
+        p {
+            margin: 0 0 10px 0;
+        }
+        ul, ol {
+            margin: 0 0 12px 0;
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        code {
+            background-color: #f3f4f6;
+            color: #b91c1c;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 12px;
+        }
+        pre {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 14px;
+            border-radius: 6px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 11.5px;
+            line-height: 1.45;
+            overflow-x: auto;
+            margin: 10px 0 16px 0;
+            page-break-inside: avoid;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0 20px 0;
+            font-size: 12px;
+            page-break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .callout {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 12.5px;
+        }
+        .callout-warn {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 12.5px;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        .footer {
+            margin-top: 40px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 10px;
+            color: #6b7280;
+            font-size: 11px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-cover">
+        <h1>Naukri.com Automation & Profile Booster</h1>
+        <div class="subtitle">Complete Technical Architecture, System Design & Operations Guide</div>
+        <div class="badges">
+            <span class="badge">Java 17+</span>
+            <span class="badge">Playwright 1.49.0</span>
+            <span class="badge">Jackson 2.18.2</span>
+            <span class="badge">Daily 8:30 AM IST</span>
+            <span class="badge">Enterprise Ready</span>
+        </div>
+    </div>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+        The <strong>Naukri Automation Bot</strong> is an enterprise-grade background automation engine engineered to maximize candidate visibility and streamline the job application process on <strong>Naukri.com</strong>.
+    </p>
+    <p><strong>Core Capabilities:</strong></p>
+    <ul>
+        <li><strong>Profile Freshness Optimization:</strong> Recruiter search algorithms prioritize recently updated candidate profiles. The bot automatically touches the resume headline daily, tagging the account as <em>"Updated Today"</em> to increase recruiter impressions by 3–5x.</li>
+        <li><strong>Automated Targeted Applications:</strong> Automatically searches for postings matching configured keywords, experience levels, and locations (including Remote), executing 1-Click <em>Easy Apply</em> while bypassing dead-end third-party redirects.</li>
+        <li><strong>Deduplication Database:</strong> Persists applied job IDs and metadata in a structured JSON database to ensure no job is ever applied to more than once.</li>
+        <li><strong>Anti-Detection & Human Mimicking:</strong> Utilizes Playwright Chromium stealth modifications, randomized typing cadences, and realistic mouse movements to safeguard candidate accounts.</li>
+    </ul>
+
+    <h2>2. Technology Stack & Architectural Components</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Component</th>
+                <th>Technology</th>
+                <th>Version</th>
+                <th>Key Responsibility</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Core Language</strong></td>
+                <td>Java (JDK)</td>
+                <td>17 / 18 / 21 LTS</td>
+                <td>Strong-typed, thread-safe enterprise runtime.</td>
+            </tr>
+            <tr>
+                <td><strong>Browser Automation</strong></td>
+                <td>Microsoft Playwright</td>
+                <td>1.49.0</td>
+                <td>Headless / Visible Chromium control & network interception.</td>
+            </tr>
+            <tr>
+                <td><strong>JSON & YAML Binding</strong></td>
+                <td>Jackson Databind / YAML</td>
+                <td>2.18.2</td>
+                <td>Parses <code>config.yaml</code> and tracks <code>applied_jobs.json</code>.</td>
+            </tr>
+            <tr>
+                <td><strong>Logging Engine</strong></td>
+                <td>SLF4J + Logback Classic</td>
+                <td>1.5.16</td>
+                <td>Colorized terminal output and daily rolling log files.</td>
+            </tr>
+            <tr>
+                <td><strong>Build & Packaging</strong></td>
+                <td>Maven Shade Plugin</td>
+                <td>3.5.3</td>
+                <td>Builds a self-contained executable Fat JAR (<code>naukri-automation.jar</code>).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <h2>3. Project Directory Architecture</h2>
+    <pre>
+naukri-automation/
+├── pom.xml                                  # Maven dependencies & shaded fat JAR build
+├── .env.example                             # Template for user credentials and runtime flags
+├── .env                                     # Local environment file (Ignored in Git)
+├── config.yaml                              # Job search keywords, filters, and criteria
+├── run_daily.bat                            # Windows batch execution script
+├── setup_windows_task.ps1                   # Windows Task Scheduler auto-registration
+├── README.md                                # Quick-start documentation
+├── DOCUMENTATION.md                         # Full technical documentation
+├── .github/
+│   └── workflows/
+│       └── daily_naukri.yml                # Cloud GitHub Actions workflow (08:30 AM IST)
+├── data/
+│   ├── session_state.json                   # Saved cookies & local storage
+│   └── applied_jobs.json                    # Deduplication database of applied job IDs
+├── logs/
+│   └── naukri_automation.log                # Daily rolling execution logs
+└── src/
+    └── main/
+        ├── resources/
+        │   └── logback.xml                  # Log pattern and log rotation policy
+        └── java/com/naukri/automation/
+            ├── Main.java                    # Entrypoint & CLI execution coordinator
+            ├── Scheduler.java               # Daily 08:30 AM IST cron scheduler
+            ├── config/
+            │   ├── AppConfig.java           # Strong-typed Java POJO configuration model
+            │   └── ConfigLoader.java        # YAML and .env parser
+            ├── browser/
+            │   └── BrowserManager.java      # Playwright Chromium manager with stealth flags
+            ├── service/
+            │   ├── AuthService.java         # Login and OTP detection handler
+            │   ├── ProfileService.java      # Profile headline touch optimizer
+            │   ├── JobSearchService.java    # Search query generator & DOM scraper
+            │   ├── ApplierService.java      # Easy-apply clicker & modal questionnaire handler
+            │   └── TrackerService.java      # JSON history tracker and counter
+            └── model/
+                ├── JobListing.java          # Model representing a discovered job
+                ├── AppliedJobInfo.java      # Model representing an applied job history record
+                └── AutomationStats.java     # Metrics model (Scanned, Applied, Skipped)
+    </pre>
+
+    <h2>4. Core Services & Implementation Details</h2>
+
+    <h3>4.1 BrowserManager (Browser Lifecycle & Anti-Detection)</h3>
+    <p>
+        Located at <code>com.naukri.automation.browser.BrowserManager</code>. Configures Chromium with anti-bot evasion arguments:
+    </p>
+    <ul>
+        <li><code>--disable-blink-features=AutomationControlled</code>: Removes automated browser flag.</li>
+        <li>Injects <code>navigator.webdriver = undefined</code> into the context before script evaluation.</li>
+        <li>Saves browser session state (cookies, local storage) into <code>data/session_state.json</code> for seamless future logins.</li>
+    </ul>
+
+    <h3>4.2 AuthService (Authentication & OTP Handling)</h3>
+    <p>
+        Located at <code>com.naukri.automation.service.AuthService</code>. Checks session status via <code>/mnjuser/profile</code>. If expired, authenticates at <code>/nlogin/login</code> using randomized human keystroke pacing (60ms). If an OTP challenge is triggered, pauses for 60s in visible mode (<code>HEADLESS=false</code>) to allow the user to complete verification once.
+    </p>
+
+    <h3>4.3 ProfileService (Profile Booster)</h3>
+    <p>
+        Located at <code>com.naukri.automation.service.ProfileService</code>. Navigates to the user's Naukri profile, edits the Resume Headline textarea, toggles a trailing period (<code>.</code>), and clicks Save. This simple operation refreshes the timestamp on Naukri's indexer, placing the candidate profile in the top tier of recruiter candidate searches.
+    </p>
+
+    <h3>4.4 JobSearchService & ApplierService</h3>
+    <p>
+        <code>JobSearchService</code> builds structured query URLs and extracts job cards via DOM locators. <code>ApplierService</code> verifies that the job does not belong to an excluded company or title keyword, checks deduplication history, clicks <em>Apply</em>, and dismisses questionnaire dialogues.
+    </p>
+
+    <div class="page-break"></div>
+
+    <h2>5. Configuration Reference</h2>
+
+    <h3>5.1 Environment Variables (<code>.env</code>)</h3>
+    <pre>
+# User Credentials
+NAUKRI_EMAIL=your_email@example.com
+NAUKRI_PASSWORD=your_naukri_password
+
+# Execution Settings
+HEADLESS=false                      # Set false on 1st run to solve OTP if prompted
+UPDATE_PROFILE=true                 # Boosts resume headline daily
+MAX_APPLICATIONS_PER_RUN=25         # Daily application cap
+
+# Scheduler Settings
+SCHEDULE_TIME=08:30                 # 24-hour format
+TIMEZONE=Asia/Kolkata
+    </pre>
+
+    <h3>5.2 Search & Filters (<code>config.yaml</code>)</h3>
+    <pre>
+search_criteria:
+  keywords:
+    - "Full Stack Developer"
+    - "React Developer"
+    - "Java Developer"
+  locations:
+    - "Bengaluru"
+    - "Hyderabad"
+    - "Remote"
+  experience:
+    min: 2
+    max: 5
+  freshness_days: 1 # Jobs posted in last 24 hours
+
+filters:
+  exclude_companies:
+    - "Confidential"
+    - "Staffing"
+  exclude_title_keywords:
+    - "Intern"
+    - "Trainee"
+    - "Tech Lead"
+  easy_apply_only: true
+    </pre>
+
+    <h2>6. Execution & Deployment Strategies</h2>
+
+    <h3>Option 1: Windows Task Scheduler (Recommended for Local PC)</h3>
+    <div class="callout">
+        Run PowerShell as Administrator and execute:
+        <br>
+        <code>powershell -ExecutionPolicy Bypass -File setup_windows_task.ps1</code>
+        <br><br>
+        This registers a task named <strong>NaukriDailyJobApply</strong> that triggers <code>run_daily.bat</code> automatically every morning at <strong>8:30 AM IST</strong>.
+    </div>
+
+    <h3>Option 2: Cloud Automation via GitHub Actions (100% Free Serverless)</h3>
+    <div class="callout">
+        1. Push this repository to a <strong>Private</strong> GitHub repository.<br>
+        2. In GitHub, go to <strong>Settings</strong> &gt; <strong>Secrets and variables</strong> &gt; <strong>Actions</strong>.<br>
+        3. Add <code>NAUKRI_EMAIL</code> and <code>NAUKRI_PASSWORD</code>.<br>
+        4. The pre-configured workflow at <code>.github/workflows/daily_naukri.yml</code> runs every morning at <strong>8:30 AM IST (03:00 AM UTC)</strong>.
+    </div>
+
+    <h3>Option 3: Manual CLI Execution</h3>
+    <pre>
+# Run once immediately
+java -jar target/naukri-automation.jar
+
+# Run immediate test + start daily 8:30 AM scheduler daemon
+java -jar target/naukri-automation.jar --run-now
+    </pre>
+
+    <div class="footer">
+        Naukri Automation Bot (Java Edition) • Generated for Technical Documentation
+    </div>
+
+</body>
+</html>

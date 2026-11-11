@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naukri Automation Bot — Dashboard & Docs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --surface: #ffffff;
+            --background: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background-color: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+        }
+
+        .logo-text h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo-text p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f1f5f9;
+        }
+
+        .hero-section {
+            padding: 40px 0 20px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #eff6ff;
+            color: #2563eb;
+            margin-bottom: 12px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .stat-card .label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .stat-card .value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .stat-card .tag {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .tag-success { background: #dcfce7; color: #15803d; }
+        .tag-info { background: #e0f2fe; color: #0369a1; }
+        .tag-warning { background: #fef3c7; color: #b45309; }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 860px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .content-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 26px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 25px;
+        }
+
+        .content-card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 13px;
+        }
+
+        .feature-text strong {
+            display: block;
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .feature-text p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        pre {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            margin: 12px 0;
+            line-height: 1.5;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo-area">
+                <div class="logo-icon">N</div>
+                <div class="logo-text">
+                    <h1>Naukri Automation Bot</h1>
+                    <p>Java 17 • Microsoft Playwright • Cloud & Windows Task Scheduler</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="Naukri_Automation_Documentation.pdf" target="_blank" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download PDF Documentation
+                </a>
+                <a href="https://github.com/bnarendra1234/naukri-automation" target="_blank" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub Repo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container hero-section">
+        <span class="badge">Enterprise Automation System</span>
+        <h2 style="font-size: 26px; font-weight: 800; margin-bottom: 8px;">Automate Your Naukri Job Hunt Every Morning</h2>
+        <p style="color: var(--text-muted); font-size: 15px; max-width: 780px;">
+            A Java 17 + Microsoft Playwright background bot engineered to touch your resume headline daily ("Updated Today" badge) and execute 1-Click Easy Apply on matching job posts across India.
+        </p>
+
+        <!-- Metrics Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">Daily Scheduled Time</div>
+                <div class="value">08:30 AM</div>
+                <span class="tag tag-info">Asia/Kolkata (IST)</span>
+            </div>
+            <div class="stat-card">
+                <div class="label">Profile Freshness Booster</div>
+                <div class="value">Automated</div>
+                <span class="tag tag-success">Updated Today Badge</span>
+            </div>
+            <div class="stat-card">
+                <div class="label">Daily Application Safety Cap</div>
+                <div class="value">25 Jobs/Day</div>
+                <span class="tag tag-warning">Anti-Ban Protection</span>
+            </div>
+            <div class="stat-card">
+                <div class="label">Tech Stack</div>
+                <div class="value">Java 17 + Maven</div>
+                <span class="tag tag-info">Playwright 1.49.0</span>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Left Column: Key Features & Architecture -->
+            <div>
+                <div class="content-card">
+                    <h2>🚀 Core Automation Features</h2>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">1</div>
+                            <div class="feature-text">
+                                <strong>Daily Recruiter Visibility Booster</strong>
+                                <p>Touches the resume headline daily, putting your profile at the top of recruiter searches with an "Updated Today" badge.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">2</div>
+                            <div class="feature-text">
+                                <strong>1-Click Easy Apply Execution</strong>
+                                <p>Automates job discovery, filters out third-party external redirects, and submits standard questionnaire modals.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">3</div>
+                            <div class="feature-text">
+                                <strong>Local JSON Deduplication DB</strong>
+                                <p>Maintains history in <code>data/applied_jobs.json</code> so you never apply to the same position twice.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">4</div>
+                            <div class="feature-text">
+                                <strong>Stealth Anti-Detection Engine</strong>
+                                <p>Emulates human mouse movements, randomized keystroke delays, and preserves session cookies in <code>data/session_state.json</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>⚡ Quick Commands</h2>
+                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Run directly using the pre-compiled fat JAR:</p>
+                    <pre># 1. Build Fat JAR
+mvn clean package -DskipTests
+
+# 2. Run once immediately
+java -jar target/naukri-automation.jar
+
+# 3. Start 8:30 AM IST Scheduler Daemon
+java -jar target/naukri-automation.jar --run-now</pre>
+                </div>
+            </div>
+
+            <!-- Right Column: Deployment & Docs -->
+            <div>
+                <div class="content-card">
+                    <h2>⚙️ Execution Methods</h2>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+                            <strong style="font-size: 13px; color: #1e40af;">Option A: GitHub Actions (Free Cloud)</strong>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Runs serverless in the cloud daily at 8:30 AM IST via <code>.github/workflows/daily_naukri.yml</code>.</p>
+                        </div>
+                        <div style="padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+                            <strong style="font-size: 13px; color: #15803d;">Option B: Windows Task Scheduler</strong>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Run <code>setup_windows_task.ps1</code> as Admin to register a Windows background task.</p>
+                        </div>
+                        <div style="padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+                            <strong style="font-size: 13px; color: #b45309;">Option C: Local Batch Runner</strong>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Double-click <code>run_daily.bat</code> anytime for an immediate test.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2>📄 Documentation</h2>
+                    <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Full architecture, component diagrams, configuration schemas, and security guidelines:</p>
+                    <a href="Naukri_Automation_Documentation.pdf" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        Open Full PDF Guide
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Naukri Automation Bot • Java 17 + Microsoft Playwright</p>
+        </div>
+    </footer>
+
+</body>
+</html>

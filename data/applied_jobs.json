@@ -1,20 +1,28 @@
 {
   "applied_jobs" : {
-    "060826033871" : {
-      "title" : "Java Full Stack Developer (Angular/React)(2-3 Years)",
-      "company" : "Infosys",
-      "location" : "Hybrid - Bengaluru, Pune, Chennai",
-      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-angular-react-2-3-years-infosys-pune-chennai-bengaluru-2-to-3-years-060826033871",
+    "111126906833" : {
+      "title" : "MERN Developer",
+      "company" : "Leading Client",
+      "location" : "Bengaluru, Pune",
+      "url" : "https://www.naukri.com/job-listings-mern-developer-rimpac-hr-services-llp-pune-bengaluru-1-to-5-years-111126906833",
       "status" : "APPLIED",
-      "applied_at" : "2026-11-11T21:32:43.366641"
+      "applied_at" : "2026-11-11T21:37:59.3202967"
     },
-    "131026048418" : {
-      "title" : "Java Full Stack Developer",
+    "301026027290" : {
+      "title" : "Java Developer",
       "company" : "Infosys",
-      "location" : "Hybrid - Bengaluru, Pune, Chennai",
-      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-infosys-pune-chennai-bengaluru-2-to-5-years-131026048418",
+      "location" : "Bengaluru, Chennai, Delhi / NCR",
+      "url" : "https://www.naukri.com/job-listings-java-developer-infosys-chennai-bengaluru-delhi-ncr-1-to-5-years-301026027290",
       "status" : "APPLIED",
-      "applied_at" : "2026-11-11T21:32:32.7530002"
+      "applied_at" : "2026-11-11T21:36:36.0620287"
+    },
+    "111126028176" : {
+      "title" : "Software Engineer / Software Developer",
+      "company" : "NetM Corporate Solutions",
+      "location" : "Hybrid - Hyderabad, Bengaluru, India",
+      "url" : "https://www.naukri.com/job-listings-software-engineer-software-developer-netm-corporate-solutions-hyderabad-bengaluru-india-0-to-5-years-111126028176",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:38:09.5824977"
     },
     "200826029442" : {
       "title" : "Java + Springboot Developer",
@@ -24,6 +32,22 @@
       "status" : "APPLIED",
       "applied_at" : "2026-11-11T21:31:59.636896"
     },
+    "030826024220" : {
+      "title" : "Java Full Stack Developer(Angular/React)(2-3 years)",
+      "company" : "Infosys",
+      "location" : "Hybrid - Hyderabad, Bengaluru, Chennai",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-angular-react-2-3-years-infosys-hyderabad-chennai-bengaluru-2-to-3-years-030826024220",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:33:35.226473"
+    },
+    "111126012413" : {
+      "title" : "Contract Hire-MERN Stack Developer (React.js, Node.js, MongoDB, Python",
+      "company" : "Ninestars Information Technologies",
+      "location" : "Bengaluru(4th Phase JP Nagar)",
+      "url" : "https://www.naukri.com/job-listings-contract-hire-mern-stack-developer-react-js-node-js-mongodb-python-ninestars-information-technologies-bengaluru-1-to-2-years-111126012413",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:38:54.8138078"
+    },
     "111126908447" : {
       "title" : "Java Fullstack Developer (Java + Angular/ ReactJS)",
       "company" : "Capgemini",
@@ -31,6 +55,14 @@
       "url" : "https://www.naukri.com/job-listings-java-fullstack-developer-java-angular-reactjs-capgemini-technology-services-india-limited-hyderabad-chennai-bengaluru-1-to-5-years-111126908447",
       "status" : "APPLIED",
       "applied_at" : "2026-11-11T21:31:38.1327695"
+    },
+    "080826011410" : {
+      "title" : "JAVA Full stack REACT/Angular",
+      "company" : "Infosys",
+      "location" : "Hybrid - Hyderabad, Bengaluru, Chennai",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-react-angular-infosys-hyderabad-chennai-bengaluru-2-to-3-years-080826011410",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:34:54.856033"
     },
     "170826025391" : {
       "title" : "Java Developer + React",
@@ -48,6 +80,94 @@
       "status" : "APPLIED",
       "applied_at" : "2026-11-11T21:32:55.2992058"
     },
+    "070826009036" : {
+      "title" : "Java Full Stack Developer",
+      "company" : "Infosys",
+      "location" : "Hybrid - Hyderabad, Bengaluru, Pune",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-infosys-hyderabad-pune-bengaluru-2-to-3-years-070826009036",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:35:07.8153781"
+    },
+    "080826011415" : {
+      "title" : "JAVA Full stack REACT/Angular",
+      "company" : "Infosys",
+      "location" : "Hybrid - Hyderabad, Bengaluru, Pune",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-react-angular-infosys-hyderabad-pune-bengaluru-2-to-3-years-080826011415",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:34:42.7864247"
+    },
+    "060826033871" : {
+      "title" : "Java Full Stack Developer (Angular/React)(2-3 Years)",
+      "company" : "Infosys",
+      "location" : "Hybrid - Bengaluru, Pune, Chennai",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-angular-react-2-3-years-infosys-pune-chennai-bengaluru-2-to-3-years-060826033871",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:32:43.366641"
+    },
+    "190826009541" : {
+      "title" : "Java Full Stack Developer (React js)_ (2-3 Years)",
+      "company" : "Infosys",
+      "location" : "Hybrid - Hyderabad, Bengaluru, Chennai",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-react-js-2-3-years-infosys-hyderabad-chennai-bengaluru-2-to-3-years-190826009541",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:33:22.8108234"
+    },
+    "131026048418" : {
+      "title" : "Java Full Stack Developer",
+      "company" : "Infosys",
+      "location" : "Hybrid - Bengaluru, Pune, Chennai",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-infosys-pune-chennai-bengaluru-2-to-5-years-131026048418",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:32:32.7530002"
+    },
+    "111126913023" : {
+      "title" : "Fullstack Developer",
+      "company" : "Leading Client",
+      "location" : "Bangalore Rural",
+      "url" : "https://www.naukri.com/job-listings-fullstack-developer-delight-hr-services-pvt-ltd-bangalore-rural-2-to-6-years-111126913023",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:33:48.0952869"
+    },
+    "111126019595" : {
+      "title" : "Java Full Stack Developer",
+      "company" : "MNC Company",
+      "location" : "Hybrid - Bengaluru",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-delights-bengaluru-2-to-7-years-111126019595",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:34:30.6262273"
+    },
+    "131026047847" : {
+      "title" : "Dot Net Fullstack Developer",
+      "company" : "Infosys",
+      "location" : "Hybrid - Hyderabad, Bengaluru, Chennai",
+      "url" : "https://www.naukri.com/job-listings-dot-net-fullstack-developer-infosys-hyderabad-chennai-bengaluru-2-to-7-years-131026047847",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:35:44.4894871"
+    },
+    "070826008746" : {
+      "title" : "Java Full Stack Developer",
+      "company" : "Infosys",
+      "location" : "Hybrid - Hyderabad, Bengaluru, Chennai",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-infosys-hyderabad-chennai-bengaluru-2-to-3-years-070826008746",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:35:20.8352066"
+    },
+    "020726005307" : {
+      "title" : "Java Full Stack Developer",
+      "company" : "Infosys",
+      "location" : "Hyderabad, Bengaluru, Mumbai (All Areas)",
+      "url" : "https://www.naukri.com/job-listings-java-full-stack-developer-infosys-hyderabad-bengaluru-mumbai-all-areas-2-to-5-years-020726005307",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:33:07.4900386"
+    },
+    "111126921854" : {
+      "title" : "Software Engineer",
+      "company" : "client of Kaizen",
+      "location" : "Bengaluru",
+      "url" : "https://www.naukri.com/job-listings-software-engineer-kaizen-sra-technologies-bengaluru-2-to-6-years-111126921854",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:39:06.3997693"
+    },
     "111126911596" : {
       "title" : "Java Fullstack Developer with Angular or Reactjs",
       "company" : "Capgemini",
@@ -55,6 +175,22 @@
       "url" : "https://www.naukri.com/job-listings-java-fullstack-developer-with-angular-or-reactjs-capgemini-technology-services-india-limited-bengaluru-1-to-5-years-111126911596",
       "status" : "APPLIED",
       "applied_at" : "2026-11-11T21:31:48.1565243"
+    },
+    "111126020360" : {
+      "title" : "Software Engineer",
+      "company" : "Deevia Software India",
+      "location" : "Bengaluru, Chennai",
+      "url" : "https://www.naukri.com/job-listings-software-engineer-deevia-software-india-chennai-bengaluru-2-to-5-years-111126020360",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:37:24.7363132"
+    },
+    "101126003364" : {
+      "title" : "Tracxn - Backend Developer",
+      "company" : "Tracxn",
+      "location" : "Bengaluru",
+      "url" : "https://www.naukri.com/job-listings-tracxn-backend-developer-tracxn-bengaluru-2-to-4-years-101126003364",
+      "status" : "APPLIED",
+      "applied_at" : "2026-11-11T21:37:48.9749238"
     }
   }
 }
