@@ -1,0 +1,24 @@
+﻿# Credentials and Secrets
+.env
+*.env
+data/session_state.json
+data/debug_screenshots/
+
+# Maven Target Build
+target/
+dependency-reduced-pom.xml
+
+# Logs
+logs/
+*.log
+
+# IDE & Editor Files
+.idea/
+*.iml
+.vscode/
+*.class
+
+# OS Files
+Thumbs.db
+Desktop.ini
+.DS_Store

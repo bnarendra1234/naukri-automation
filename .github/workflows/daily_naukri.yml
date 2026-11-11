@@ -1,0 +1,45 @@
+name: Daily Naukri Job Apply (8:30 AM IST) - Java
+
+on:
+  schedule:
+    # 8:30 AM IST is 03:00 AM UTC (UTC + 5:30)
+    - cron: '0 3 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  apply-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build Application
+        run: mvn clean package -DskipTests
+
+      - name: Install Playwright Browsers
+        run: mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps chromium" || true
+
+      - name: Run Naukri Automation Bot
+        env:
+          NAUKRI_EMAIL: ${{ secrets.NAUKRI_EMAIL }}
+          NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
+          HEADLESS: "true"
+          UPDATE_PROFILE: "true"
+          MAX_APPLICATIONS_PER_RUN: "25"
+        run: java -jar target/naukri-automation.jar
+
+      - name: Commit & Push Application History (Optional)
+        if: always()
+        run: |
+          git config --global user.name "Naukri Automation Bot"
+          git config --global user.email "bot@users.noreply.github.com"
+          git add data/applied_jobs.json || true
+          git commit -m "chore: update applied jobs tracking [skip ci]" || echo "No changes to commit"
+          git push || true

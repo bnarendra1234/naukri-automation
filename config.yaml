@@ -1,0 +1,63 @@
+# Naukri Automation Search & Application Rules
+
+search_criteria:
+  # Target job keywords (will search each query sequentially)
+  keywords:
+    - "Full Stack Developer"
+    - "React Developer"
+    - "Node.js Developer"
+    - "Software Engineer"
+
+  # Preferred locations (leave empty for all India or specify cities)
+  locations:
+    - "Bengaluru"
+    - "Hyderabad"
+    - "Pune"
+    - "Remote"
+
+  # Years of experience filter (min and max)
+  experience:
+    min: 2
+    max: 5
+
+  # Job freshness filter in days (1 = posted in last 24h, 3 = last 3 days, 7 = last week)
+  freshness_days: 1
+
+  # Minimum salary in Lakhs (optional, null to disable)
+  min_salary_lakhs: null
+
+filters:
+  # Skip companies matching these names (case-insensitive)
+  exclude_companies:
+    - "Staffing"
+    - "Consultancy"
+    - "Recruitment Agency"
+
+  # Skip jobs with these keywords in title or summary
+  exclude_title_keywords:
+    - "Intern"
+    - "Trainee"
+    - "Manager"
+    - "Lead"
+
+  # Only apply to jobs that have direct Naukri 1-click apply (avoids external company portal redirects)
+  easy_apply_only: true
+
+profile_update:
+  # Daily bio/headline touch to refresh "Last Updated" timestamp for recruiters
+  enabled: true
+  # Subtle character/period toggle or resume headline re-save to trigger update timestamp
+  headline_suffix_toggle: true
+
+application:
+  # Delay between job clicks in seconds (simulates human browsing)
+  min_delay_seconds: 4
+  max_delay_seconds: 8
+  # Max pages to traverse per keyword search
+  max_pages_per_keyword: 3
+  # Daily overall safety cap
+  daily_max_applications: 30
+
+storage:
+  applied_history_file: "data/applied_jobs.json"
+  session_file: "data/session_state.json"
